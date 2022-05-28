@@ -39,6 +39,21 @@ namespace WebArchitecture.StudentCheckList.Controllers
            
         }
 
+        [HttpGet("StudentCod/{codEstudiante}")]
+        public IEnumerable<AttendanceDto> GetByStudentCod(string codEstudiante)
+        {
+            AttendanceService service = new AttendanceService(db);
+            return (IEnumerable<AttendanceDto>)service.GetAttendanceByStudentCod(codEstudiante);
+
+        }
+
+        [HttpGet("ClassCod/{classCod}")]
+        public IEnumerable<AttendanceDto> GetByClassCod(string classCod)
+        {
+            AttendanceService service = new AttendanceService(db);
+            return (IEnumerable<AttendanceDto>)service.GetAttendanceByClassCod(classCod);
+        }
+
         // POST 
         [HttpPost]
         public AttendanceDto Post(AttendanceRequest asistencia)

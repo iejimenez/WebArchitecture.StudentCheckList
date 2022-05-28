@@ -32,6 +32,35 @@ namespace WebArchitecture.StudentCheckList.Services
             return attendance;
         }
 
+        public List<AttendanceDto> GetAttendanceByStudentCod(string cod)
+        {
+            List<AttendanceDto> results = BD.Attendances.Where(s=>s.StudentCod == cod).Select(s => new AttendanceDto()
+            {
+                Id = s.Id,
+                ClassCod = s.ClassCod,
+                StudentCod = s.StudentCod,
+                CheckDate = s.CheckDate
+            }).ToList();
+
+
+            return results;
+        }
+
+        public List<AttendanceDto> GetAttendanceByClassCod(string cod)
+        {
+            List<AttendanceDto> results = BD.Attendances.Where(s => s.ClassCod == cod).Select(s => new AttendanceDto()
+            {
+                Id = s.Id,
+                ClassCod = s.ClassCod,
+                StudentCod = s.StudentCod,
+                CheckDate = s.CheckDate
+            }).ToList();
+
+
+            return results;
+        }
+
+
         public AttendanceDto AddAttendance(AttendanceRequest checklistItem)
         {
 
