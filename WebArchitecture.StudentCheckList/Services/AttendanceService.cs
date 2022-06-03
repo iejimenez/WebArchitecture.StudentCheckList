@@ -32,7 +32,7 @@ namespace WebArchitecture.StudentCheckList.Services
             return attendance;
         }
 
-        public List<AttendanceDto> GetAttendanceByStudentCod(string cod)
+        public List<AttendanceDto> GetAttendanceByStudentCod(int cod)
         {
             List<AttendanceDto> results = BD.Attendances.Where(s=>s.StudentCod == cod).Select(s => new AttendanceDto()
             {
@@ -46,7 +46,7 @@ namespace WebArchitecture.StudentCheckList.Services
             return results;
         }
 
-        public List<AttendanceDto> GetAttendanceByClassCod(string cod)
+        public List<AttendanceDto> GetAttendanceByClassCod(int cod)
         {
             List<AttendanceDto> results = BD.Attendances.Where(s => s.ClassCod == cod).Select(s => new AttendanceDto()
             {
@@ -64,9 +64,9 @@ namespace WebArchitecture.StudentCheckList.Services
         public AttendanceDto AddAttendance(AttendanceRequest checklistItem)
         {
 
-            if(string.IsNullOrEmpty(checklistItem.ClassCod))
+            if(checklistItem.ClassCod <= 0)
                 throw new ArgumentException("No ha especificado uno o mas parametros. ClassCod");
-            if (string.IsNullOrEmpty(checklistItem.StudentCod))
+            if (checklistItem.StudentCod<= 0)
                 throw new ArgumentException("No ha especificado uno o mas parametros. StudentCod");
 
 

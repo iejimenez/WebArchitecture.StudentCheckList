@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebArchitecture.StudentCheckList.Entity;
 
 namespace WebArchitecture.StudentCheckList.Migrations
 {
     [DbContext(typeof(StudentCheckListDBContext))]
-    partial class StudentCheckListDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220603015902_202206020858PM")]
+    partial class _202206020858PM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

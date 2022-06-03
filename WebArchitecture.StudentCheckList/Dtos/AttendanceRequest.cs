@@ -7,8 +7,8 @@ namespace WebArchitecture.StudentCheckList.Dtos
 {
     public class AttendanceRequest
     {
-        public string StudentCod { get; set; }
+        public int StudentCod { get; set; }
 
-        public string ClassCod { get; set; }
+        public int ClassCod { get; set; }
     }
 }

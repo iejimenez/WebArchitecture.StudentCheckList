@@ -40,7 +40,7 @@ namespace WebArchitecture.StudentCheckList.Controllers
         }
 
         [HttpGet("StudentCod/{codEstudiante}")]
-        public IEnumerable<AttendanceDto> GetByStudentCod(string codEstudiante)
+        public IEnumerable<AttendanceDto> GetByStudentCod(int codEstudiante)
         {
             AttendanceService service = new AttendanceService(db);
             return (IEnumerable<AttendanceDto>)service.GetAttendanceByStudentCod(codEstudiante);
@@ -48,7 +48,7 @@ namespace WebArchitecture.StudentCheckList.Controllers
         }
 
         [HttpGet("ClassCod/{classCod}")]
-        public IEnumerable<AttendanceDto> GetByClassCod(string classCod)
+        public IEnumerable<AttendanceDto> GetByClassCod(int classCod)
         {
             AttendanceService service = new AttendanceService(db);
             return (IEnumerable<AttendanceDto>)service.GetAttendanceByClassCod(classCod);

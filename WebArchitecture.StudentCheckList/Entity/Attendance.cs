@@ -9,9 +9,9 @@ namespace WebArchitecture.StudentCheckList.Entity
     {
         public int Id { get; set; }
 
-        public string StudentCod { get; set; }
+        public int StudentCod { get; set; }
 
-        public string ClassCod { get; set; }
+        public int ClassCod { get; set; }
 
         public DateTime CheckDate { get; set; }
     }

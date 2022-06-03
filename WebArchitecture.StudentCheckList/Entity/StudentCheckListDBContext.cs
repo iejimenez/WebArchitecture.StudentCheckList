@@ -22,17 +22,15 @@ namespace WebArchitecture.StudentCheckList.Entity
                 .ValueGeneratedOnAdd();
 
             modelBuilder.Entity<Attendance>()
-                .HasKey(od => od.Id); 
+                .HasKey(od => od.Id);
 
             modelBuilder.Entity<Attendance>()
                 .Property(c => c.StudentCod)
-                .IsRequired()
-                .HasMaxLength(200);
+                .IsRequired();
 
             modelBuilder.Entity<Attendance>()
                 .Property(c => c.ClassCod)
-                .IsRequired()
-                .HasMaxLength(200);
+                .IsRequired();
 
             modelBuilder.Entity<Attendance>()
                 .Property(c=>c.CheckDate)
